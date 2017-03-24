@@ -1,3 +1,13 @@
-body, select, input {
-    font: 12px Verdana;
+body, select, input, td {
+    font: 14px Verdana;
+}
+
+.typeAndAlign {
+    font-style: italic;
+}
+
+table.abilityTable td {
+    width: 80px;
+    text-align: center;
+    padding: 3px;
 }
