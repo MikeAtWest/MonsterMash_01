@@ -9,7 +9,8 @@ export default {
     'index': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/index.tsx')],
     'hello': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/components/helloWorld/helloPage')],
     'news': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/components/news/newsPage')],
-    'multiple': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/components/multiple/multiplePage')]
+    'multiple': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/components/multiple/multiplePage')],
+    'monsterBuilder': ['react-hot-loader/patch', 'webpack-hot-middleware/client?reload=true', path.resolve(__dirname, 'src/components/monsterBuilder/monsterBuilderPage')],
   },
 
   target: 'web',
@@ -53,6 +54,12 @@ export default {
       chunks: ['news', 'hello'],
       inject: true
     }),
+    new HtmlWebpackPlugin({
+      template: 'src/components/monsterBuilder/monsterBuilderPage.html',
+      filename: 'monsterBuilderPage.html',
+      chunks: ['monsterBuilder'],
+      inject: true
+    }),    
     new webpack.HotModuleReplacementPlugin()
   ],
   module: {

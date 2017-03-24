@@ -1,0 +1,5 @@
+[
+  "<link href=\"(RESOURCE_PATH)/hello.css\" rel=\"stylesheet\">",
+  "<script type=\"text/javascript\" src=\"(RESOURCE_PATH)/vendor.js\"></script>",
+  "<script type=\"text/javascript\" src=\"(RESOURCE_PATH)/hello.js\"></script>"
+]

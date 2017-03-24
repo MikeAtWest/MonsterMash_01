@@ -1,0 +1,5 @@
+[
+  "<link href=\"(RESOURCE_PATH)/news.css\" rel=\"stylesheet\">",
+  "<script type=\"text/javascript\" src=\"(RESOURCE_PATH)/vendor.js\"></script>",
+  "<script type=\"text/javascript\" src=\"(RESOURCE_PATH)/news.js\"></script>"
+]
