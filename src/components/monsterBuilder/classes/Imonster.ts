@@ -10,4 +10,9 @@ export interface IMonster {
     wis: number;
     cha: number;
     expectedCR: string;
+    ac: number;
+    naturalArmorBonus: number;
+
+    updateAC(): void;
+
 }

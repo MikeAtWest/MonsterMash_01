@@ -29,6 +29,9 @@ export default class MonsterDisplayComponent extends React.Component<IProps, {}>
             <div>
                 <h1>{this.props.monster.name}</h1>
                 <div className="typeAndAlign">{this.props.monster.size} {this.props.monster.type}, {this.props.monster.alignment}</div>
+                <hr/>
+                <div><b>Armor Class:</b> {this.props.monster.ac}</div>
+                <hr/>
                 <div>
                     <table className="abilityTable">
                         <tbody>

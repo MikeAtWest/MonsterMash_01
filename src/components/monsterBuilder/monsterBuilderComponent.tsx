@@ -24,6 +24,7 @@ export default class MonsterBuilderComponent extends React.Component<IProps, {}>
 
     this.state = {};
     this.state.monster = new Monster();
+    this.state.monster.updateAC();
 
     this.state.sizes = ["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"];
 
@@ -32,7 +33,7 @@ export default class MonsterBuilderComponent extends React.Component<IProps, {}>
     this.state.alignments = ["Lawful good", "Neutral good", "Chaotic good", "Lawful neutral", "Neutral", "Chaotic neutral", "Lawful evil", "Neutral evil", "Chaotic evil", "Unaligned"];
 
     this.state.challengeRatings = ["0", "1/8", "1/4", "1/2"];
-    for(let c: number = 1; c<= 30; c++) {
+    for (let c: number = 1; c <= 30; c++) {
       this.state.challengeRatings.push(c + "");
     }
     // this.state.challengeRatings = [
@@ -60,6 +61,13 @@ export default class MonsterBuilderComponent extends React.Component<IProps, {}>
 
     console.log(field + " - " + value); // tslint:disable-line
     this.state.monster[field] = value;
+
+    if (field === "naturalArmorBonus") {
+      this.state.monster[field] = parseInt(value, 10);
+    }
+
+    this.state.monster.updateAC();
+
     return this.setState({ monster: this.state.monster });
   }
 
@@ -107,7 +115,11 @@ export default class MonsterBuilderComponent extends React.Component<IProps, {}>
             <tr>
               <td>Expected CR:</td>
               <td><DropdownBasic name="expectedCR" items={this.state.challengeRatings} onChange={this.onDropdownChange} selectedValue={this.state.monster.expectedCR} /></td>
-            </tr>            
+            </tr>
+            <tr>
+              <td>Natural Armor Bonus:</td>
+              <td><DropdownNumeric name="naturalArmorBonus" min={0} max={15} onChange={this.onDropdownChange} selectedValue={this.state.monster.naturalArmorBonus} /></td>
+            </tr>
           </tbody>
         </table>
 
